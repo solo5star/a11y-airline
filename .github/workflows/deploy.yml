@@ -29,9 +29,7 @@ jobs:
 
       - name: Build
         run: |
-          echo BASE_URL=$(echo $GITHUB_REPOSITORY | sed -r 's/^.+\/(.+)$/\/\1/') > .env
           npm run build
-          cp ./dist/index.html ./dist/404.html
 
       - name: Deploy to gh-pages branch
         uses: peaceiris/actions-gh-pages@v3
